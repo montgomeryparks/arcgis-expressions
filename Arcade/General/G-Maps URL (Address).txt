@@ -1,0 +1,5 @@
+var streetAddress = Replace($feature.ADDRESS, ' ', '+')
+var city = Replace($feature.CITY, ' ', '+')
+var state = 'MD'
+var zip = $feature.ZIPCODE
+'https://www.google.com/maps/place/' + streetAddress + ',+' + city + ',+' + state + '+' + zip
