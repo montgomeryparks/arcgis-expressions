@@ -1,4 +1,7 @@
-/* Summary: This expression calculates Location Name for a feature, which means it calculates the finest location that the feature falls within: Buildings, then Park Location (SubPark), then Park Unit. If it does not fall within a park unit, it calculates the nearest park unit within 100 feet.
+/* Summary: This expression calculates Location Name for a feature,
+which means it calculates the finest location that the feature falls within: 
+Buildings, then Park Location (SubPark), then Park Unit. 
+If it does not fall within a park unit, it calculates the nearest park unit within 100 feet.
 */
 
 // Get the source features
