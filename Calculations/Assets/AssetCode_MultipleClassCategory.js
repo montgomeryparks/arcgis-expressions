@@ -37,13 +37,13 @@ var park_intersect = First(Intersects(parks, $feature))
 if(!IsEmpty(subpark_intersect)){
   var facility_code = subpark_intersect['FACILITY_C']
   var asset_match = 'MC-' + facility_code + '%'
-  var park_assets = Filter(bmp_structures, 'EAM_ASSET LIKE @asset_match AND CATEGORY = @category')
+  var park_assets = Filter(assets, 'EAM_ASSET LIKE @asset_match AND CATEGORY = @category')
 }
 
 else if(!IsEmpty(park_intersect)){
   var facility_code = park_intersect['FACILITY_C']
   var asset_match = 'MC-' + facility_code + '%'
-  var park_assets = Filter(bmp_structures, 'EAM_ASSET LIKE @asset_match AND CATEGORY = @category')
+  var park_assets = Filter(assets, 'EAM_ASSET LIKE @asset_match AND CATEGORY = @category')
 }
 
 else {
@@ -69,7 +69,7 @@ else {
     // If there was no feature, return null
     if (!IsEmpty(closestFeatureWithDistance)) { 
       var facility_code = closestFeatureWithDistance['feature']['FACILITY_C']
-      var park_assets = Filter(bmp_structures, 'FACILITY_C = @facility_code')
+      var park_assets = Filter(assets, 'FACILITY_C = @facility_code')
       }
     else{
       var facility_code = null
